@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta name="description" content="Build, refine, and reuse thoughtful AI prompts with Promptcraft.">
+    <title>Promptcraft — Prompt studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Prompt templates">
+        <a class="brand" href="#" aria-label="Promptcraft home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>promptcraft</span>
+        </a>
+        <div class="sidebar-heading">
+          <div>
+            <p class="eyebrow">YOUR TOOLKIT</p>
+            <h1>Templates</h1>
+          </div>
+          <span class="template-count" id="template-count" aria-label="Number of templates">06</span>
+        </div>
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <span class="sr-only">Search templates</span>
+          <input id="template-search" type="search" placeholder="Find a template..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="category-list" id="category-list" aria-label="Filter templates by category"></div>
+        <div class="template-list" id="template-list" aria-live="polite"></div>
+        <div class="sidebar-footer">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Your prompts stay on this device</span>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-divider">/</span><strong>Prompt studio</strong></div>
+          <div class="topbar-note"><span class="sparkle" aria-hidden="true">✦</span> A little clarity goes a long way</div>
+        </header>
+        <section class="workspace" aria-labelledby="page-title">
+          <div class="page-intro">
+            <div>
+              <p class="eyebrow">THE PROMPT STUDIO</p>
+              <h2 id="page-title">Make a better prompt.</h2>
+              <p class="intro-copy">Start with a proven template. Add your context. Get to a great answer faster.</p>
+            </div>
+            <div class="step-badge"><span>01</span> PICK · FILL · CREATE</div>
+          </div>
+          <div class="studio-grid">
+            <section class="card builder-card" aria-labelledby="builder-title">
+              <div class="card-heading">
+                <div>
+                  <div class="section-kicker"><span class="step-number">1</span> YOUR INPUT</div>
+                  <h3 id="builder-title">Set the scene</h3>
+                </div>
+                <button class="text-button" id="reset-button" type="button">Reset fields</button>
+              </div>
+              <div class="selected-template" id="selected-template"></div>
+              <div class="field-list" id="field-list"></div>
+              <p class="privacy-note"><span aria-hidden="true">⌑</span> Drafts are saved only in this browser.</p>
+            </section>
+            <section class="card output-card" aria-labelledby="output-title">
+              <div class="card-heading output-heading">
+                <div>
+                  <div class="section-kicker"><span class="step-number">2</span> YOUR PROMPT</div>
+                  <h3 id="output-title">Ready when you are</h3>
+                </div>
+                <span class="live-badge"><span></span> LIVE PREVIEW</span>
+              </div>
+              <label class="sr-only" for="prompt-output">Composed prompt</label>
+              <textarea class="prompt-output" id="prompt-output" spellcheck="false" aria-describedby="output-help"></textarea>
+              <div class="output-meta">
+                <span id="output-help">Make any final edits before you copy.</span>
+                <span id="character-count">0 characters</span>
+              </div>
+              <div class="output-actions">
+                <button class="copy-button" id="copy-button" type="button"><span aria-hidden="true">▢</span> Copy prompt</button>
+                <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+              </div>
+            </section>
+          </div>
+          <footer class="workspace-footer">
+            <span>Good prompts give AI a role, a goal, and the context to get there.</span>
+            <span>Made for curious minds <span class="footer-heart" aria-hidden="true">♥</span></span>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
